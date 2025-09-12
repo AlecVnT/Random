@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="Card">
+        <h1 id="Strategy">Hello</h1>
+ </div>
+ <button onclick="window.location.reload();">⌘R</button>
+
+ <script>
+  var strategy = document.getElementById("Strategy");
+  
+  const Strategies = [
+   "inspire toi de internet ou de vidéos créatives",
+"gribouille qqch et fait-en un dessin",
+"ferme les yeux et laisse faire ton imaginaire",
+"dessine qqch le mieux possible mais les yeux fermés",
+"fais le contraire de ce qui est demandé",
+"dessine qqch sans lever le crayon",
+"commence par la fin"
+  ];
+
+  let total = Strategies.length;
+  let rando = Math.random(); 
+  let hasar = rando * total;
+  let choix = Math.floor( hasar );
+
+  strategy.innerHTML = Strategies[ choix ];
+
+  //if( Math.random() > 0.5 ){
+  // strategy.innerHTML = "Obey.";
+  //}
+  
+ </script>
+
+</body>
+</html>
