@@ -2,8 +2,8 @@
 
 
 body {
-    font-family: font-family: "Space Grotesk", sans-serif;;
-    background-color: darkseagreen;
+    font-family: "Space Grotesk", sans-serif;
+    background-color: rgb(103, 184, 254);
 
 min-height: 100vh;
 display: flex;
@@ -15,19 +15,19 @@ align-items: center;
 
 #Card {
     width: 20rem;
-    aspect-ratio: 1.4;
-    border-radius: 0.6rem;
-    padding: 1rem;
+    aspect-ratio: 2.2;
+    border-radius: 0.9rem;
+    padding: 1.7rem;
     
     
 
     background-color: rgb(255, 255, 255);
-    border:1.5px solid rgba(0, 0, 0, 0.267);
+    border:3px solid rgb(0, 0, 0);
 
-    box-shadow: 0.6rem 1rem 0.6rem #0003;
+    box-shadow: 0.8rem 2rem 0.8rem #0003;
 }
 
-#Strategy{ 
+#TextCard{ 
     margin: 0;
     font-size: 1.5rem;
     font-weight: 800;
@@ -35,11 +35,42 @@ align-items: center;
 }
 
 button {
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding: 0.5em 1em;
-    opacity: 0.5;
+    opacity: 1;
+    border: 1px solid rgb(0, 0, 0)
 }
 
 button:hover {
-    opacity: 1;
+    opacity: 2;
+}
+
+#searchInput{
+      margin: 2rem;
+      width: 20rem;
+      font-size: 1.2rem;
+      padding: 0.5em
+   }
+
+#blague {
+    background-color: white;
+    border-radius: 20px;
+    font-size: larger;
+    
+}
+
+
+
+
+#idea {
+    background-color: white;
+    border-radius: 20px;
+    font-size: larger;
+    
+}
+
+#strategy {
+    background-color: white;
+    border-radius: 20px;
+    font-size: larger;
 }

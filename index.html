@@ -8,36 +8,96 @@
 </head>
 <body>
 
-    <div id="Card">
-        <h1 id="Strategy">Hello</h1>
- </div>
- <button onclick="window.location.reload();">⌘R</button>
+   <input type="text" id="searchInput" placeholder="search…" autofocus>
 
- <script>
-  var strategy = document.getElementById("Strategy");
-  
-  const Strategies = [
-   "inspire toi de internet ou de vidéos créatives",
-"gribouille qqch et fait-en un dessin",
-"ferme les yeux et laisse faire ton imaginaire",
-"dessine qqch le mieux possible mais les yeux fermés",
-"fais le contraire de ce qui est demandé",
-"dessine qqch sans lever le crayon",
-"commence par la fin"
-  ];
+   <div id="Card">
+      <h1 id="TextCard">Hello</h1>
+   </div>
 
-  let total = Strategies.length;
-  let rando = Math.random(); 
-  let hasar = rando * total;
-  let choix = Math.floor( hasar );
+   <button id="blague">Blague</button>
+   <button id="idea">Idée</button>
+   <button id="strategy">Je me fais chier</button>
 
-  strategy.innerHTML = Strategies[ choix ];
+   <script>
+   const textCard = document.getElementById("TextCard");
+   const strategyBtn = document.getElementById("strategy");
+   const blagueBtn   = document.getElementById("blague");
+   const ideaBtn     = document.getElementById("idea");
 
-  //if( Math.random() > 0.5 ){
-  // strategy.innerHTML = "Obey.";
-  //}
-  
- </script>
+   // Recherche Google sur "Enter"
+   document.getElementById('searchInput').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+         const query = this.value.trim();
+         if (query) {
+            const googleUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+            window.open(googleUrl, '_blank');
+         }
+      }
+   });
+
+   const Strategies = [
+      "inspire toi de internet ou de vidéos créatives",
+      "gribouille qqch et fait-en un dessin",
+      "ferme les yeux et laisse faire ton imaginaire",
+      "dessine qqch le mieux possible mais les yeux fermés",
+      "Ok, jm'en fout",
+      "dessine qqch sans lever le crayon",
+      "crée un son troll",
+      "fais les 100 pas",
+      "explique ton idée, ton concept ou ton problème à qqun",
+      "crée un objet qui perd toute son utilité",
+      "refait un logo à ta façon",
+      "fait du Blender",
+      "commence un petit projet photoshop",
+      "joue à un jeu",
+      "écoute de la musique",
+      "fait un peu de sport",
+      "crée qqch sur Figma",
+      "modifie cette page",
+      "fait un projet graphique",
+      "va dehors avec un pote"
+   ];
+
+   const Blague = [
+      "J’ai décidé d’arrêter de me plaindre de la vie... mais je trouve ça vraiment difficile",
+      "j'en ai marre de procrastiner, demain j'arrête",
+      "Je me suis acheter un carnet de note pour mieux organiser ma vie, il est toujours vide mais bien rangé",
+      "Je me suis inscrit à la salle pour perdre du poid, tout ce que j'ai perdu c'est 2 mois et 300 balles",
+      "La vie c'est comme un logiciel, il y a des mises à jours et dès fois ça plante sans raison",
+      "quel est la différence entre un texto de ta mère et de ta meuf, le texto de ta mère te demande si tu as bien mangé et celle de ta meuf te demande quand tu va la manger",
+      "quel est le point commun entre une femme enceinte et une pizza congelée ? Dans les deux cas l'homme ne l'a pas sortie au bon moment",
+      "pourquoi les textos peuvent être dangeureux ? Parce que un simple OK peut déclencher une geurre froide",
+      "si quand c'est noir c'est cuit, mon pote est grillé",
+      "Au Feu ! Sortez sans paniquer ! Le gars qui s'apelle paniquer👁️👄👁️",
+      "Quand on te dit t'es à croquer, c'est mignon, jusqu'au moment ou tu te rend compte que c'est un cannibale",
+      
+
+
+   ];
+
+   const Idee = [
+      "inspire toi d'internet",
+      "regarde un tuto dessin",
+   ];
+
+   // Fonction utilitaire pour choisir un élément aléatoire
+   function randomFromArray(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+   }
+
+   // Événements sur les boutons
+   strategyBtn.addEventListener("click", () => {
+      textCard.textContent = randomFromArray(Strategies);
+   });
+
+   blagueBtn.addEventListener("click", () => {
+      textCard.textContent = randomFromArray(Blague);
+   });
+
+   ideaBtn.addEventListener("click", () => {
+      textCard.textContent = randomFromArray(Idea);
+   });
+   </script>
 
 </body>
 </html>
